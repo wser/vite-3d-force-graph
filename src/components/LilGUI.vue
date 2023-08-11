@@ -1,3 +1,4 @@
+<template></template>
 <script lang="ts">
 import GUI from 'lil-gui'; 
 
@@ -9,14 +10,13 @@ const obj = {
 
 const perspective = gui.addFolder( 'Perspective' );
 perspective
-  .add( obj, '2D / 3D' ).onChange( (bool:any) => bool )//? render3D() : render2D() )
+  .add( obj, '2D / 3D' ).onChange( (bool:any) => bool) //? render3D() : render2D() )
 perspective.close()
 
 const preferences = gui.addFolder( 'Preferences' );
 preferences
   .add( obj, 'Edit mode' ).onChange( (bool:any) => bool ) //=> editMode = bool )
 preferences.close()
-
 
 // gui.add( myObject, 'myBoolean' );  // Checkbox
 // gui.add( myObject, 'myFunction' ); // Button
@@ -47,10 +47,10 @@ preferences.close()
 
 // gui.addColor( colorFormats, 'string' );
 gui.close();
-export default gui;  
+export default gui; 
 </script>
 
-<style setup>
+<style>
 .lil-gui.root{ width: 150px; margin-right:300px; }
 .lil-gui .children .controller .name{padding-left: 10%;width: 75px;}
 .lil-gui .children .controller .widget{justify-content: center;}

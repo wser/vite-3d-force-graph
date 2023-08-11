@@ -23,6 +23,7 @@
 </template>
 <script lang="ts">
 import { defineComponent, reactive, toRefs } from "vue";
+
 function genRandomTree(N = 300, reverse = false) {
   return {
     nodes: [...Array(N).keys()].map((i) => ({ id: i })),
