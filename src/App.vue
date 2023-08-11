@@ -14,7 +14,7 @@
     :linkDirectionalArrowRelPos="1"
     :linkCurvature="0.25"
   >
-    <GraphContextMenu v-slot="data" bindType="canvas">
+    <!-- <GraphContextMenu v-slot="data" bindType="canvas">
       <div style="background: red; color: green" @click="deleteItem(data)">
         Del
       </div>
@@ -24,10 +24,10 @@
     </GraphContextMenu>
     <GraphContextMenu bindType="edge">
       <GraphMenu :data="menuData" @change="menuChange">hello</GraphMenu>
-    </GraphContextMenu>
+    </GraphContextMenu> -->
   </VueForceGraph3D>
   <VueForceGraph2D v-if="is2D" :graphData="graphData">
-    <GraphContextMenu v-slot="data" bindType="canvas">
+    <!-- <GraphContextMenu v-slot="data" bindType="canvas">
       <ul>
         <li @click="actionHandle(data)">hello</li>
       </ul>
@@ -37,7 +37,7 @@
     </GraphContextMenu>
     <GraphContextMenu v-slot="data" bindType="edge">
       <div @click="deleteItem(data)">sfsf</div>
-    </GraphContextMenu>
+    </GraphContextMenu> -->
   </VueForceGraph2D>
 
   <!-- <VueForceGraphAR :graphData="graphData"></VueForceGraphAR> -->
@@ -59,7 +59,7 @@ function genRandomTree(N = 300, reverse = false) {
 export default defineComponent({
   setup() {
     const state = reactive({
-      graphData: genRandomTree(40),
+      graphData: genRandomTree(5),
       is2D: false,
       menuData: [
         {
