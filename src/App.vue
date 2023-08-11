@@ -13,32 +13,9 @@
     :linkDirectionalArrowLength="3.5"
     :linkDirectionalArrowRelPos="1"
     :linkCurvature="0.25"
-  >
-    <!-- <GraphContextMenu v-slot="data" bindType="canvas">
-      <div style="background: red; color: green" @click="deleteItem(data)">
-        Del
-      </div>
-    </GraphContextMenu>
-    <GraphContextMenu bindType="node">
-      <GraphMenu :data="menuData" @change="menuChange">hello</GraphMenu>
-    </GraphContextMenu>
-    <GraphContextMenu bindType="edge">
-      <GraphMenu :data="menuData" @change="menuChange">hello</GraphMenu>
-    </GraphContextMenu> -->
-  </VueForceGraph3D>
-  <VueForceGraph2D v-if="is2D" :graphData="graphData">
-    <!-- <GraphContextMenu v-slot="data" bindType="canvas">
-      <ul>
-        <li @click="actionHandle(data)">hello</li>
-      </ul>
-    </GraphContextMenu>
-    <GraphContextMenu bindType="node">
-      <GraphMenu :data="menuData" @change="menuChange">hello</GraphMenu>
-    </GraphContextMenu>
-    <GraphContextMenu v-slot="data" bindType="edge">
-      <div @click="deleteItem(data)">sfsf</div>
-    </GraphContextMenu> -->
-  </VueForceGraph2D>
+  ></VueForceGraph3D>
+
+  <VueForceGraph2D v-if="is2D" :graphData="graphData"></VueForceGraph2D>
 
   <!-- <VueForceGraphAR :graphData="graphData"></VueForceGraphAR> -->
   <!-- <VueForceGraphVR :graphData="graphData"></VueForceGraphVR> -->
@@ -60,17 +37,7 @@ export default defineComponent({
   setup() {
     const state = reactive({
       graphData: genRandomTree(5),
-      is2D: false,
-      menuData: [
-        {
-          id: "delete",
-          label: "del",
-        },
-        {
-          id: 1,
-          label: "hhh",
-        },
-      ],
+      is2D: false,     
     });
     const deleteItem = (data: any) => {
       console.log(data);
