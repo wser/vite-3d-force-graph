@@ -1,5 +1,6 @@
 <template>
   <div class="toggle-btn" @click="toggle">{{ is2D ? "3D" : "2D" }}</div>
+  <LilGUI />
   <VueForceGraph3D
     v-if="!is2D"
     :graphData="graphData"
@@ -22,6 +23,10 @@
 </template>
 <script lang="ts">
 import { defineComponent, reactive, toRefs } from "vue";
+import LilGUI from './components/LilGUI.vue'
+
+
+
 function genRandomTree(N = 300, reverse = false) {
   return {
     nodes: [...Array(N).keys()].map((i) => ({ id: i })),
